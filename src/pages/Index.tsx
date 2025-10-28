@@ -4,9 +4,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Sparkles } from "lucide-react";
-import iconTanningBed from "@/assets/icon-tanning-bed.jpg";
-import iconSprayGun from "@/assets/icon-spray-gun.jpg";
-import ProcessedIcon from "@/components/ProcessedIcon";
+import iconTanningBed from "@/assets/icon-tanning-bed-gold.jpg";
+import iconSprayGun from "@/assets/icon-spray-gun-gold.jpg";
 
 const Index = () => {
   return (
@@ -30,7 +29,7 @@ const Index = () => {
             {/* Card 1 */}
             <div className="bg-card rounded-2xl shadow-soft p-8 text-center space-y-4 hover:shadow-gold transition-all duration-300">
               <div className="inline-flex p-4 bg-gold/10 rounded-full">
-                <ProcessedIcon src={iconTanningBed} alt="Bronzeamento Artificial" className="w-8 h-8" />
+                <img src={iconTanningBed} alt="Bronzeamento Artificial" className="w-16 h-16 object-contain" />
               </div>
               <h3 className="text-xl font-semibold text-gold">Bronzeamento Artificial</h3>
               <p className="text-sm text-foreground/70">
@@ -46,7 +45,7 @@ const Index = () => {
             {/* Card 2 */}
             <div className="bg-card rounded-2xl shadow-soft p-8 text-center space-y-4 hover:shadow-gold transition-all duration-300">
               <div className="inline-flex p-4 bg-gold/10 rounded-full">
-                <ProcessedIcon src={iconSprayGun} alt="Instant Bronze" className="w-8 h-8" />
+                <img src={iconSprayGun} alt="Instant Bronze" className="w-16 h-16 object-contain" />
               </div>
               <h3 className="text-xl font-semibold text-gold">Instant Bronze</h3>
               <p className="text-sm text-foreground/70">

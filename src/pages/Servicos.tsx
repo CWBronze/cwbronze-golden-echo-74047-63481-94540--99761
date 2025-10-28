@@ -5,8 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { Check, Sun, Sparkles, Award, Crown } from "lucide-react";
-import iconTanningBed from "@/assets/icon-tanning-bed.jpg";
-import ProcessedIcon from "@/components/ProcessedIcon";
+import iconTanningBed from "@/assets/icon-tanning-bed-gold.jpg";
 
 const Servicos = () => {
   const servicos = [
@@ -186,11 +185,11 @@ const Servicos = () => {
                     <div className="flex items-center gap-3 mb-2">
                       <div className="p-2 bg-gold/10 rounded-lg">
                         {servico.isImage ? (
-                          <ProcessedIcon src={servico.icon as string} alt={servico.title} className="w-6 h-6" />
+                          <img src={servico.icon as string} alt={servico.title} className="w-10 h-10 object-contain" />
                         ) : (
                           (() => {
                             const Icon = servico.icon as React.ComponentType<{ className?: string }>;
-                            return <Icon className="w-6 h-6 text-gold" />;
+                            return <Icon className="w-10 h-10 text-gold" />;
                           })()
                         )}
                       </div>
