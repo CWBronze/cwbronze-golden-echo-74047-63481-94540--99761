@@ -30,7 +30,7 @@ const Index = () => {
             {/* Card 1 */}
             <div className="bg-card rounded-2xl shadow-soft p-8 text-center space-y-4 hover:shadow-gold transition-all duration-300">
               <div className="inline-flex p-4 bg-gold/10 rounded-full">
-                <ProcessedIcon src={iconTanningBed} alt="Bronzeamento Artificial" className="w-16 h-16" />
+                <ProcessedIcon src={iconTanningBed} alt="Bronzeamento Artificial" className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-semibold text-gold">Bronzeamento Artificial</h3>
               <p className="text-sm text-foreground/70">
@@ -46,7 +46,7 @@ const Index = () => {
             {/* Card 2 */}
             <div className="bg-card rounded-2xl shadow-soft p-8 text-center space-y-4 hover:shadow-gold transition-all duration-300">
               <div className="inline-flex p-4 bg-gold/10 rounded-full">
-                <ProcessedIcon src={iconSprayGun} alt="Instant Bronze" className="w-16 h-16" />
+                <ProcessedIcon src={iconSprayGun} alt="Instant Bronze" className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-semibold text-gold">Instant Bronze</h3>
               <p className="text-sm text-foreground/70">
@@ -62,7 +62,7 @@ const Index = () => {
             {/* Card 3 */}
             <div className="bg-card rounded-2xl shadow-soft p-8 text-center space-y-4 hover:shadow-gold transition-all duration-300">
               <div className="inline-flex p-4 bg-gold/10 rounded-full">
-                <Sparkles className="w-16 h-16 text-gold" />
+                <Sparkles className="w-8 h-8 text-gold" />
               </div>
               <h3 className="text-xl font-semibold text-gold">Análise de Pele</h3>
               <p className="text-sm text-foreground/70">
