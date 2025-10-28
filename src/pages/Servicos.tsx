@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { Check, Sun, Sparkles, Award, Crown } from "lucide-react";
+import iconTanningBed from "@/assets/icon-tanning-bed.jpg";
 
 const Servicos = () => {
   const servicos = [
@@ -18,7 +19,8 @@ const Servicos = () => {
         "Sessões rápidas e eficientes",
         "Acompanhamento profissional"
       ],
-      icon: Sun,
+      icon: iconTanningBed,
+      isImage: true,
       link: "/agendamento",
       linkText: "AGENDAR"
     },
@@ -170,7 +172,6 @@ const Servicos = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
             {servicos.map((servico, index) => {
-              const Icon = servico.icon;
               return (
                 <Card key={index} className="overflow-hidden hover:shadow-gold transition-all duration-300">
                   <div className="relative h-64 overflow-hidden rounded-t-2xl">
@@ -183,7 +184,14 @@ const Servicos = () => {
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
                       <div className="p-2 bg-gold/10 rounded-lg">
-                        <Icon className="w-6 h-6 text-gold" />
+                        {servico.isImage ? (
+                          <img src={servico.icon as string} alt={servico.title} className="w-6 h-6 object-contain" />
+                        ) : (
+                          (() => {
+                            const Icon = servico.icon as React.ComponentType<{ className?: string }>;
+                            return <Icon className="w-6 h-6 text-gold" />;
+                          })()
+                        )}
                       </div>
                       <CardTitle className="text-gold">{servico.title}</CardTitle>
                     </div>
