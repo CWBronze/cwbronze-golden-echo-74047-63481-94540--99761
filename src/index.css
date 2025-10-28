@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Luxury Gold & Bronze Palette */
+    --background: 40 30% 96%;
+    --foreground: 30 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 20% 20%;
+
+    /* Primary Gold */
+    --primary: 43 74% 49%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Bronze/Brown for CTA */
+    --secondary: 32 45% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 25% 90%;
+    --muted-foreground: 30 15% 50%;
+
+    /* Accent Gold */
+    --accent: 45 80% 55%;
+    --accent-foreground: 30 20% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 20% 85%;
+    --input: 40 20% 90%;
+    --ring: 43 74% 49%;
+
+    --radius: 1.5rem;
+    
+    /* Custom Luxury Tokens */
+    --gold-light: 45 85% 65%;
+    --gold-dark: 40 60% 35%;
+    --champagne: 40 35% 92%;
+    --bronze: 32 45% 45%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(40 35% 92%) 0%, hsl(45 40% 88%) 50%, hsl(40 30% 85%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(43 74% 49%) 0%, hsl(45 85% 65%) 100%);
+    
+    /* Shadows */
+    --shadow-gold: 0 10px 40px -10px hsl(43 74% 49% / 0.3);
+    --shadow-soft: 0 4px 20px -4px hsl(30 20% 20% / 0.1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 20% 12%;
+    --foreground: 40 30% 95%;
+
+    --card: 30 20% 15%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 30 20% 15%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 43 74% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 32 45% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 30 15% 25%;
+    --muted-foreground: 40 20% 65%;
+
+    --accent: 45 80% 55%;
+    --accent-foreground: 30 20% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 25%;
+    --input: 30 15% 25%;
+    --ring: 43 74% 49%;
+    
+    --gold-light: 45 85% 65%;
+    --gold-dark: 40 60% 35%;
+    --champagne: 30 20% 18%;
+    --bronze: 32 45% 45%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(30 20% 12%) 0%, hsl(30 20% 15%) 50%, hsl(30 20% 18%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(43 74% 49%) 0%, hsl(45 85% 65%) 100%);
+    
+    --shadow-gold: 0 10px 40px -10px hsl(43 74% 49% / 0.4);
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+  
+  .delay-700 {
+    animation-delay: 700ms;
+  }
+  
+  .delay-1000 {
+    animation-delay: 1000ms;
+  }
+}
