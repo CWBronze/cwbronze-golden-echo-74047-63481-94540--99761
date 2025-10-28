@@ -186,11 +186,11 @@ const Servicos = () => {
                     <div className="flex items-center gap-3 mb-2">
                       <div className="p-2 bg-gold/10 rounded-lg">
                         {servico.isImage ? (
-                          <ProcessedIcon src={servico.icon as string} alt={servico.title} className="w-10 h-10" />
+                          <ProcessedIcon src={servico.icon as string} alt={servico.title} className="w-16 h-16" />
                         ) : (
                           (() => {
                             const Icon = servico.icon as React.ComponentType<{ className?: string }>;
-                            return <Icon className="w-10 h-10 text-gold" />;
+                            return <Icon className="w-16 h-16 text-gold" />;
                           })()
                         )}
                       </div>
