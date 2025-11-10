@@ -229,6 +229,13 @@ const AnaliseDePele = () => {
     }
   };
 
+  const handleBack = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion(currentQuestion - 1);
+      setAnswers(answers.slice(0, -1));
+    }
+  };
+
   const calculateResult = (finalAnswers: number[]) => {
     const total = finalAnswers.reduce((sum, points) => sum + points, 0);
     const average = total / finalAnswers.length;
@@ -379,6 +386,19 @@ const AnaliseDePele = () => {
                   </button>
                 ))}
               </div>
+
+              {/* Botão Voltar */}
+              {currentQuestion > 0 && (
+                <div className="mt-6 flex justify-center">
+                  <Button
+                    onClick={handleBack}
+                    variant="outline"
+                    className="px-8"
+                  >
+                    ← Voltar
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         </section>
