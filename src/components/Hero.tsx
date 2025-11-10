@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-// import heroModel from "@/assets/hero-model.jpg";
+import heroModel from "@/assets/hero-model.jpg";
 import heroHands from "@/assets/hero-hands.jpg";
 import {
   Tooltip,
@@ -13,7 +13,7 @@ import {
 const Hero = () => {
   return (
     <TooltipProvider>
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero mt-0 pt-12">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero mt-0 pt-20">
       {/* Bokeh/Light Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-1/4 w-32 h-32 bg-gold/20 rounded-full blur-3xl animate-pulse"></div>
@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-gold-light/25 rounded-full blur-2xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="container mx-auto px-6 py-20 relative z-10">
+      <div className="container mx-auto px-6 py-32 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           {/* Left Image - Model */}
           <div className="flex justify-center lg:justify-end pt-24">
@@ -29,7 +29,7 @@ const Hero = () => {
               <TooltipTrigger asChild>
                 <Link to="/analise-de-pele" className="relative group cursor-pointer">
                   <img
-                    src="/fototipos-glitter.jpg"
+                    src={heroModel}
                     alt="Escala Fitzpatrick - Análise de Pele"
                     className="w-full max-w-xs rounded-2xl shadow-soft object-cover transition-all duration-500 group-hover:scale-105 group-hover:shadow-gold"
                   />
