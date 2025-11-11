@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ModalInteracaoPacote from "./ModalInteracaoPacote";
-import LeadCaptureModal from "./LeadCaptureModal";
+import ModalInteracaoPacote from "@/components/ModalInteracaoPacote";
+import LeadCaptureModal from "@/components/LeadCaptureModal";
 import logoShield from "@/assets/logo-cwbronze-3d.png";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
