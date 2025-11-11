@@ -1,11 +1,10 @@
 import { useState } from "react";
-import ModalInteracaoPacote from "@/components/ModalInteracaoPacote";
-import LeadCaptureModal from "@/components/LeadCaptureModal";
+import ModalInteracaoPacote from "./ModalInteracaoPacote";
+import LeadCaptureModal from "./LeadCaptureModal";
 import logoShield from "@/assets/logo-cwbronze-3d.png";
 import { Button } from "@/components/ui/button";
-import { Link, useNavigate } from "react-router-dom";
-import { Calendar, Menu, X, LogIn, LogOut, User } from "lucide-react";
-import { useAuth } from "@/hooks/useAuth";
+import { Link } from "react-router-dom";
+import { Calendar, Menu, X } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -17,16 +16,6 @@ const Header = () => {
   const [showInteracaoModal, setShowInteracaoModal] = useState(false);
   const [showAgendamentoModal, setShowAgendamentoModal] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { user, signOut } = useAuth();
-  const navigate = useNavigate();
-
-  const handleAuthClick = () => {
-    if (user) {
-      signOut();
-    } else {
-      navigate("/auth");
-    }
-  };
 
   const navItems = [
     { label: "INÍCIO", href: "/" },
@@ -97,37 +86,13 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Desktop Buttons */}
-          <div className="hidden md:flex items-center ml-auto gap-3">
-            {user && (
-              <div className="flex items-center gap-2 text-sm text-gold">
-                <User className="w-4 h-4" />
-                <span className="font-medium">Olá, {user.user_metadata?.nome_completo?.split(' ')[0] || 'Usuário'}</span>
-              </div>
-            )}
-            <Button 
-              variant="outline" 
-              size="default" 
-              className="gap-2"
-              onClick={handleAuthClick}
-            >
-              {user ? (
-                <>
-                  <LogOut className="w-4 h-4" />
-                  SAIR
-                </>
-              ) : (
-                <>
-                  <LogIn className="w-4 h-4" />
-                  ENTRAR
-                </>
-              )}
-            </Button>
+          {/* Desktop Agendar Button */}
+          <div className="hidden md:flex items-center ml-auto">
             <Button 
               variant="cta" 
               size="default" 
               className="gap-2 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(212,175,55,0.6)] hover:brightness-110"
-              onClick={() => setShowInteracaoModal(true)}
+              onClick={() => setShowInteracaoModal(true)} // Abre o modal de interesse em agendar
             >
               <Calendar className="w-4 h-4" />
               AGENDAR
@@ -174,37 +139,6 @@ const Header = () => {
             </Link>
           ))}
           
-          {/* Mobile User Info */}
-          {user && (
-            <div className="flex items-center gap-2 text-sm text-gold py-3 border-b border-gray-100">
-              <User className="w-4 h-4" />
-              <span className="font-medium">Olá, {user.user_metadata?.nome_completo?.split(' ')[0] || 'Usuário'}</span>
-            </div>
-          )}
-          
-          {/* Mobile Auth Button */}
-          <Button 
-            variant="outline" 
-            size="default" 
-            className="w-full gap-2 mt-2"
-            onClick={() => {
-              closeMobileMenu();
-              handleAuthClick();
-            }}
-          >
-            {user ? (
-              <>
-                <LogOut className="w-4 h-4" />
-                SAIR
-              </>
-            ) : (
-              <>
-                <LogIn className="w-4 h-4" />
-                ENTRAR
-              </>
-            )}
-          </Button>
-          
           {/* Mobile Agendar Button */}
           <Button 
             variant="cta" 
@@ -212,7 +146,7 @@ const Header = () => {
             className="w-full gap-2 mt-4"
             onClick={() => {
               closeMobileMenu();
-              setShowInteracaoModal(true);
+              setShowInteracaoModal(true); // Abre o modal de interesse em agendar
             }}
           >
             <Calendar className="w-4 h-4" />

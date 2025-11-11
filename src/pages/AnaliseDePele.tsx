@@ -276,12 +276,7 @@ const AnaliseDePele = () => {
       <Header />
 
       {/* Modal Informativo */}
-      <ModalInfo 
-        isOpen={showInfoModal} 
-        onClose={() => setShowInfoModal(false)} 
-        title="Análise de Pele"
-        description="Complete o questionário para descobrir seu fototipo e receber recomendações personalizadas de bronzeamento."
-      />
+      <ModalInfo isOpen={showInfoModal} onClose={() => setShowInfoModal(false)} />
 
       {/* Modal de Captura de Leads */}
       <LeadCaptureModal

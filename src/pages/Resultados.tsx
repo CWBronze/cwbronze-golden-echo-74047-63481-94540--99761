@@ -165,7 +165,7 @@ const Resultados = () => {
             <h2 className="font-script text-4xl md:text-5xl text-gold mb-8">
               Seja o Próximo Case de Sucesso
             </h2>
-            <Link to="/agendamento">
+            <Link to="https://wa.me/5541998661792" target="_blank" rel="noopener noreferrer">
               <Button variant="cta" size="lg" className="text-lg px-12 py-6">
                 AGENDAR SESSÃO
               </Button>
